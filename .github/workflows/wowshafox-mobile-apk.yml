@@ -1,0 +1,23 @@
+name: Wowshafox Mobile APK Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-mobile-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build Wowshafox mobile APK
+        run: ./tools/ci/build-wowshafox-mobile-apk.sh

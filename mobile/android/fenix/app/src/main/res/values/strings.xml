@@ -455,7 +455,7 @@
     <string name="onboarding_preferences_dialog_positive_button">Done</string>
 
     <!-- Terms of service onboarding title card label. 'Firefox' intentionally hardcoded here-->
-    <string name="onboarding_welcome_to_firefox" tools:ignore="BrandUsage">Welcome to Firefox</string>
+    <string name="onboarding_welcome_to_firefox" tools:ignore="BrandUsage">Welcome to Wowshafox</string>
     <!-- Terms of service sub header label. -->
     <string name="onboarding_terms_of_service_sub_header_2">Fast and secure web browsing</string>
     <!-- Terms of service onboarding page continue button label. -->
@@ -2090,9 +2090,9 @@
     <!-- Text for the button to connect another device -->
     <string name="sync_add_new_device_connect_button">Connect Another Device…</string>
     <!-- A message template for the shared link with a footer. %1$s is the shared link, %2$s is the app name (e.g. Firefox) and %3$s is a download link for the app. -->
-    <string name="sent_from_firefox_template" tools:ignore="UnusedResources">%1$s\n\nSent from %2$s 🦊 Try the mobile browser: %3$s</string>
+    <string name="sent_from_firefox_template" tools:ignore="UnusedResources">%1$s\n\nSent from Wowshafox Try the mobile browser: %3$s</string>
     <!-- A short message template for the shared link with a footer. %1$s is the shared link, %2$s is the app name (e.g. Firefox) and %3$s is a download link for the app. -->
-    <string name="sent_from_firefox_template_short" tools:ignore="UnusedResources">%1$s\n\nSent from %2$s 🦊 %3$s</string>
+    <string name="sent_from_firefox_template_short" tools:ignore="UnusedResources">%1$s\n\nSent from Wowshafox %3$s</string>
 
     <!-- Notifications -->
     <!-- Text shown in the notification that pops up to remind the user that a private browsing session is active. -->
