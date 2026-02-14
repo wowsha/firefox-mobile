@@ -134,10 +134,12 @@ toolbar[inactive="true"] .urlbar,
 
 .urlbar-background,
 #searchbar {
-  background-color: var(--toolbar-field-background-color);
+  background-color: color-mix(in srgb, var(--wowsha-glass-elevated-surface) 88%, transparent);
   background-clip: border-box;
-  border: var(--urlbar-container-border-width) solid var(--toolbar-field-border-color);
+  backdrop-filter: blur(18px) saturate(160%);
+  border: var(--urlbar-container-border-width) solid color-mix(in srgb, var(--wowsha-glass-border) 72%, var(--toolbar-field-border-color));
   border-radius: var(--toolbarbutton-border-radius);
+  box-shadow: 0 10px 24px color-mix(in srgb, black 14%, transparent);
 }
 
 .urlbar-input-container,
@@ -229,7 +231,7 @@ toolbar[inactive="true"] .urlbar,
 
 [open] > .urlbar-background {
   border-color: var(--arrowpanel-border-color);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 16px 34px color-mix(in srgb, black 20%, transparent);
 
   /* The border moves outwards in the open state, so increase the radius
      accordingly. */

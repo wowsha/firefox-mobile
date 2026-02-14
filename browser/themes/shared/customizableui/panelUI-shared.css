@@ -307,6 +307,7 @@ panelview {
     border: none;
     font: menu;
     background-color: transparent;
+    backdrop-filter: blur(22px) saturate(170%);
     --panel-background: var(--arrowpanel-background);
     --panel-color: var(--arrowpanel-color);
     --panel-border-color: var(--arrowpanel-border-color);

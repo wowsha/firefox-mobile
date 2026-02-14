@@ -161,6 +161,8 @@ body {
 #navigator-toolbox {
   appearance: none;
   z-index: var(--browser-area-z-index-toolbox);
+  backdrop-filter: blur(24px) saturate(170%);
+  border-bottom: 1px solid var(--wowsha-glass-border);
 
   &[fullscreenShouldAnimate] {
     transition: 0.8s margin-top ease-out;
@@ -182,6 +184,7 @@ body {
   /* Prevents the background from propagating to the viewport */
   contain: paint;
   position: relative;
+  background: linear-gradient(160deg, light-dark(rgba(236, 244, 255, 0.9), rgba(35, 38, 53, 0.95)), light-dark(rgba(242, 231, 255, 0.72), rgba(19, 22, 35, 0.95))) fixed;
   background-color: var(--toolbox-bgcolor);
   color: var(--toolbox-textcolor);
 

@@ -3,6 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 :root {
+  --wowsha-glass-surface: light-dark(rgba(255, 255, 255, 0.62), rgba(22, 22, 28, 0.56));
+  --wowsha-glass-elevated-surface: light-dark(rgba(255, 255, 255, 0.78), rgba(46, 46, 58, 0.68));
+  --wowsha-glass-border: light-dark(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.18));
+  --wowsha-glass-hover-surface: light-dark(rgba(255, 255, 255, 0.86), rgba(66, 66, 82, 0.72));
+  --wowsha-glass-active-surface: light-dark(rgba(255, 255, 255, 0.94), rgba(86, 86, 104, 0.82));
+
   --toolbox-bgcolor: -moz-headerbar;
   --toolbox-textcolor: -moz-headerbartext;
   --toolbox-bgcolor-inactive: -moz-headerbarinactive;
@@ -83,14 +89,14 @@
   :root:not([lwtheme]) {
     --color-accent-primary: light-dark(rgb(0, 97, 224), rgb(0, 221, 255));
     --button-text-color-primary: light-dark(rgb(251, 251, 254), rgb(43, 42, 51));
-    --button-background-color: light-dark(rgba(207, 207, 216, 0.33), rgba(0, 0, 0, 0.33));
-    --button-background-color-hover: light-dark(rgba(207, 207, 216, 0.66), rgba(207, 207, 216, 0.2));
-    --button-background-color-active: light-dark(rgb(207, 207, 216), rgba(207, 207, 216, 0.4));
+    --button-background-color: var(--wowsha-glass-surface);
+    --button-background-color-hover: var(--wowsha-glass-hover-surface);
+    --button-background-color-active: var(--wowsha-glass-active-surface);
     --button-text-color: light-dark(rgb(21, 20, 26), rgb(251, 251, 254));
 
-    --arrowpanel-background: light-dark(white, rgb(66, 65, 77));
+    --arrowpanel-background: var(--wowsha-glass-elevated-surface);
     --arrowpanel-color: light-dark(black, rgb(251, 251, 254));
-    --arrowpanel-border-color: light-dark(rgb(240, 240, 244), rgb(82, 82, 94));
+    --arrowpanel-border-color: color-mix(in srgb, var(--wowsha-glass-border) 72%, var(--arrowpanel-background));
 
     --arrowpanel-dimmed: light-dark(color-mix(in srgb, currentColor 12%, transparent), color-mix(in srgb, currentColor 17%, transparent));
     --arrowpanel-dimmed-further: light-dark(color-mix(in srgb, currentColor 20%, transparent), color-mix(in srgb, currentColor 14%, transparent));
@@ -98,11 +104,11 @@
     --input-color: light-dark(rgb(21, 20, 26), rgb(251, 251, 254));
     --input-bgcolor: light-dark(rgb(255, 255, 255), #42414d);
 
-    --tab-selected-bgcolor: light-dark(rgb(255, 255, 255), rgba(106, 106, 120, 0.7));
+    --tab-selected-bgcolor: var(--wowsha-glass-elevated-surface);
     --tab-selected-textcolor: light-dark(rgb(21, 20, 26), rgb(255, 255, 255));
     --tabs-navbar-separator-style: none;
 
-    --toolbox-bgcolor: light-dark(rgb(234, 234, 237), rgb(28, 27, 34));
+    --toolbox-bgcolor: var(--wowsha-glass-surface);
     --toolbox-textcolor: light-dark(rgb(21, 20, 26), rgb(251, 251, 254));
     --toolbox-bgcolor-inactive: var(--toolbox-bgcolor);
     --toolbox-textcolor-inactive: var(--toolbox-textcolor);
@@ -116,7 +122,7 @@
     --urlbarView-highlight-color: light-dark(rgb(21, 20, 26), rgb(251, 251, 254));
     --urlbarView-hover-background: light-dark(rgb(240, 240, 244), var(--arrowpanel-dimmed));
 
-    --urlbar-box-bgcolor: light-dark(white, rgb(66, 65, 77));
+    --urlbar-box-bgcolor: var(--wowsha-glass-elevated-surface);
     --urlbar-icon-fill-opacity: 0.72;
     @media (prefers-color-scheme: dark) {
       --urlbar-icon-fill-opacity: 1;
@@ -130,7 +136,7 @@
     --link-color: light-dark(rgb(0, 97, 224), rgb(0, 221, 255));
     --attention-dot-color: light-dark(#2ac3a2, #54ffbd);
 
-    --sidebar-background-color: light-dark(white, rgb(28, 27, 34));
+    --sidebar-background-color: var(--wowsha-glass-surface);
     --sidebar-text-color: light-dark(rgb(21, 20, 26), rgb(249, 249, 250));
     --sidebar-border-color: var(--border-color-card);
   }

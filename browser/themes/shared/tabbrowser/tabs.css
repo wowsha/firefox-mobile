@@ -36,7 +36,7 @@
   --tab-icon-end-margin: 5.5px;
   --tab-label-line-height: 1.7;
   --tab-loading-fill: #0a84ff;
-  --tab-hover-background-color: color-mix(in srgb, currentColor 11%, transparent);
+  --tab-hover-background-color: color-mix(in srgb, var(--wowsha-glass-hover-surface) 84%, transparent);
   --tab-selected-textcolor: var(--toolbar-color);
   --tab-selected-bgcolor: var(--toolbar-bgcolor);
   --tab-selected-color-scheme: var(--toolbar-color-scheme);
@@ -46,7 +46,7 @@
   &[lwt-tab-selected="dark"] {
     --tab-selected-color-scheme: dark;
   }
-  --tab-selected-shadow: var(--box-shadow-tab);
+  --tab-selected-shadow: 0 14px 28px color-mix(in srgb, black 18%, transparent);
   --tab-outline: 1px solid var(--tab-outline-color);
   --tab-outline-color: transparent;
   --tab-outline-offset: -1px;
@@ -944,6 +944,8 @@ tab-split-view-wrapper[dragtarget] {
   min-height: var(--tab-min-height);
   outline: var(--tab-outline);
   outline-offset: var(--tab-outline-offset);
+  backdrop-filter: blur(16px) saturate(155%);
+  border: 1px solid color-mix(in srgb, var(--wowsha-glass-border) 74%, transparent);
 
   .tabbrowser-tab:hover > .tab-stack > &:not([selected], [multiselected]) {
     background-color: var(--tab-hover-background-color);

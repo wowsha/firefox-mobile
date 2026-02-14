@@ -1,0 +1,39 @@
+name: Compile Mobile on Change
+
+on:
+  pull_request:
+    branches:
+      - main
+      - autoland
+    paths:
+      - mobile/android/**
+      - .github/workflows/compile-on-change.yml
+  push:
+    branches:
+      - main
+      - autoland
+    paths:
+      - mobile/android/**
+      - .github/workflows/compile-on-change.yml
+
+jobs:
+  compile-mobile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build Android Components
+        working-directory: mobile/android/android-components
+        run: ./gradlew --no-daemon assemble
+
+      - name: Build Fenix
+        working-directory: mobile/android/fenix
+        run: ./gradlew --no-daemon assembleDebug

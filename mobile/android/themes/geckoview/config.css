@@ -7,9 +7,9 @@
   --text-color: #0c0c0d;
   --border-color: #e1e1e2;
 
-  --toolbar-background-color: #f9f9fa;
-  --searchbar-background-color: #ededf0;
-  --searchbar-focused-background-color: #fff;
+  --toolbar-background-color: rgba(255, 255, 255, 0.62);
+  --searchbar-background-color: rgba(255, 255, 255, 0.52);
+  --searchbar-focused-background-color: rgba(255, 255, 255, 0.8);
 
   --deemphasized-border-color: rgba(0, 0, 0, 0.05);
   --deemphasized-text-color: rgba(0, 0, 0, 0.5);
@@ -21,9 +21,9 @@
     --text-color: #f9f9fa;
     --border-color: rgba(255, 255, 255, 0.15);
 
-    --toolbar-background-color: #1c1b22;
-    --searchbar-background-color: #3f3e46;
-    --searchbar-focused-background-color: #4c4a54;
+    --toolbar-background-color: rgba(26, 26, 32, 0.58);
+    --searchbar-background-color: rgba(78, 78, 90, 0.52);
+    --searchbar-focused-background-color: rgba(92, 92, 106, 0.68);
 
     --deemphasized-border-color: rgba(249, 249, 250, 0.05);
     --deemphasized-text-color: rgba(249, 249, 250, 0.5);
@@ -37,6 +37,7 @@ body {
   user-select: none;
   font-family: sans-serif;
   -moz-text-size-adjust: none;
+  background: linear-gradient(155deg, light-dark(rgba(236, 244, 255, 0.9), rgba(34, 39, 56, 0.95)), light-dark(rgba(242, 231, 255, 0.76), rgba(19, 22, 35, 0.95))) fixed;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -50,8 +51,10 @@ body {
   left: 0;
   z-index: 10;
   background-color: var(--toolbar-background-color);
+  backdrop-filter: blur(20px) saturate(165%);
+  border-bottom: 1px solid var(--deemphasized-border-color);
   font-weight: bold;
-  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 24px rgba(30, 38, 72, 0.18);
 }
 
 .toolbar-container {
@@ -64,7 +67,7 @@ body {
   height: 2em;
   background-color: var(--searchbar-background-color);
   border-radius: 0.25em;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.44);
   overflow: hidden;
   display: flex;
   float: inline-end;
@@ -72,7 +75,7 @@ body {
 
 #filter-container:focus-within {
   background-color: var(--searchbar-focused-background-color);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(24, 28, 44, 0.15);
 }
 
 #filter-input {
@@ -153,6 +156,7 @@ body {
 #new-pref-container {
   width: 100%;
   margin: 0;
+  background: linear-gradient(155deg, light-dark(rgba(236, 244, 255, 0.9), rgba(34, 39, 56, 0.95)), light-dark(rgba(242, 231, 255, 0.76), rgba(19, 22, 35, 0.95))) fixed;
   background-color: var(--background-color);
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
