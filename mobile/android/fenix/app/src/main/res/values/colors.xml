@@ -4,9 +4,9 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Material3 color variables -->
-    <color name="fx_mobile_primary">@color/photonInk20</color>
+    <color name="fx_mobile_primary">#FF00C8FF</color>
     <color name="fx_mobile_on_primary">@color/photonLightGrey05</color>
-    <color name="fx_mobile_primary_container">@color/photonViolet05</color>
+    <color name="fx_mobile_primary_container">#FFD9FF00</color>
     <color name="fx_mobile_on_primary_container">@color/photonDarkGrey90</color>
     <color name="fx_mobile_primary_inverse">@color/photonViolet20</color>
     <color name="fx_mobile_secondary">@color/photonDarkGrey05</color>
@@ -17,9 +17,9 @@
     <color name="fx_mobile_on_tertiary">@color/photonLightGrey05</color>
     <color name="fx_mobile_tertiary_container">@color/photonPink05</color>
     <color name="fx_mobile_on_tertiary_container">@color/photonDarkGrey90</color>
-    <color name="fx_mobile_background">@color/photonLightGrey10</color>
+    <color name="fx_mobile_background">#FF050510</color>
     <color name="fx_mobile_on_background">@color/photonDarkGrey90</color>
-    <color name="fx_mobile_surface">@color/photonLightGrey10</color>
+    <color name="fx_mobile_surface">#FF0B0B1A</color>
     <color name="fx_mobile_on_surface">@color/photonDarkGrey90</color>
     <color name="fx_mobile_surface_variant">@color/photonLightGrey30</color>
     <color name="fx_mobile_on_surface_variant">@color/photonDarkGrey05</color>
@@ -77,7 +77,7 @@
 
     <!-- Text -->
     <!-- Primary text -->
-    <color name="fx_mobile_text_color_primary">@color/photonDarkGrey90</color>
+    <color name="fx_mobile_text_color_primary">#FFF7F7FF</color>
     <!-- Secondary text -->
     <color name="fx_mobile_text_color_secondary">@color/photonDarkGrey05</color>
     <!-- Disabled text -->
@@ -87,7 +87,7 @@
     <!-- Warning text on Secondary button -->
     <color name="fx_mobile_text_color_critical_button">@color/photonRed70</color>
     <!-- Small heading, Text link -->
-    <color name="fx_mobile_text_color_accent">@color/photonViolet70</color>
+    <color name="fx_mobile_text_color_accent">#FF00F5D4</color>
     <!-- Text Inverted/On Color -->
     <color name="fx_mobile_text_color_oncolor_primary">@color/photonLightGrey05</color>
     <!-- Text Inverted/On Color -->
@@ -128,7 +128,7 @@
     <!-- Private theme color variables -->
 
     <!-- Material3 color variables -->
-    <color name="fx_mobile_private_primary">@color/photonViolet10</color>
+    <color name="fx_mobile_private_primary">#FFFF7A18</color>
     <color name="fx_mobile_private_on_primary">@color/photonDarkGrey90</color>
     <color name="fx_mobile_private_primary_container">@color/photonViolet80</color>
     <color name="fx_mobile_private_on_primary_container">@color/photonLightGrey05</color>
@@ -141,9 +141,9 @@
     <color name="fx_mobile_private_on_tertiary">@color/photonDarkGrey90</color>
     <color name="fx_mobile_private_tertiary_container">@color/photonPink80</color>
     <color name="fx_mobile_private_on_tertiary_container">@color/photonLightGrey05</color>
-    <color name="fx_mobile_private_background">#FF342B4A</color>
+    <color name="fx_mobile_private_background">#FF18000F</color>
     <color name="fx_mobile_private_on_background">@color/photonLightGrey05</color>
-    <color name="fx_mobile_private_surface">#FF342B4A</color>
+    <color name="fx_mobile_private_surface">#FF240012</color>
     <color name="fx_mobile_private_on_surface">@color/photonLightGrey05</color>
     <color name="fx_mobile_private_surface_variant">#FF413857</color>
     <color name="fx_mobile_private_on_surface_variant">@color/photonLightGrey40</color>
