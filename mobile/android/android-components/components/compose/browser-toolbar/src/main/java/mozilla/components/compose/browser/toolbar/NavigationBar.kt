@@ -6,16 +6,21 @@ package mozilla.components.compose.browser.toolbar
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.HorizontalDivider
+import androidx.compose.foundation.background
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
@@ -46,10 +51,18 @@ fun NavigationBar(
     toolbarGravity: ToolbarGravity = Top,
     onInteraction: (BrowserToolbarEvent) -> Unit,
 ) {
-    Surface {
+    val barHeight = if (toolbarGravity == Top) 60.dp else 64.dp
+    val horizontalPadding = if (toolbarGravity == Top) 8.dp else 20.dp
+    val verticalPadding = if (toolbarGravity == Top) 0.dp else 12.dp
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = horizontalPadding, vertical = verticalPadding),
+    ) {
         Box(
             modifier = Modifier
-                .height(if (toolbarGravity == Top) 60.dp else 48.dp)
+                .height(barHeight)
                 .pointerInput(Unit) {
                     awaitPointerEventScope {
                         while (true) {
@@ -58,26 +71,62 @@ fun NavigationBar(
                     }
                 }
                 .semantics(mergeDescendants = true) {}
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .clip(shape = FloatingBarShape),
         ) {
-            ActionContainer(
-                actions = actions,
-                onInteraction = onInteraction,
-                modifier = Modifier
-                    .padding(horizontal = 12.dp)
-                    .fillMaxWidth()
-                    .align(Alignment.Center),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            )
+            Surface(
+                shape = FloatingBarShape,
+                shadowElevation = FloatingShadow,
+                color = MaterialTheme.colorScheme.surface.copy(alpha = FloatingBarAlpha),
+            ) {
+                Box(
+                    modifier = Modifier
+                        .height(barHeight)
+                        .fillMaxWidth(),
+                ) {
+                    ActionContainer(
+                        actions = actions,
+                        onInteraction = onInteraction,
+                        modifier = Modifier
+                            .padding(horizontal = 16.dp)
+                            .fillMaxWidth()
+                            .align(Alignment.Center),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                    )
 
-            if (toolbarGravity == Top) {
-                HorizontalDivider(
-                    modifier = Modifier.align(Alignment.TopCenter),
-                )
+                    if (toolbarGravity == Top) {
+                        HorizontalDivider(
+                            modifier = Modifier.align(Alignment.TopCenter),
+                        )
+                    }
+
+                    if (toolbarGravity == Top) {
+                        FloatingIndicator()
+                    }
+                }
             }
         }
     }
 }
+
+@Composable
+private fun BoxScope.FloatingIndicator() {
+    Box(
+        modifier = Modifier
+            .align(Alignment.BottomCenter)
+            .padding(bottom = 6.dp)
+            .height(4.dp)
+            .fillMaxWidth(0.08f)
+            .clip(shape = FloatingIndicatorShape)
+            .background(MaterialTheme.colorScheme.onSurface.copy(alpha = FloatingIndicatorAlpha)),
+    )
+}
+
+private val FloatingBarShape = androidx.compose.foundation.shape.RoundedCornerShape(24.dp)
+private val FloatingIndicatorShape = androidx.compose.foundation.shape.RoundedCornerShape(2.dp)
+private const val FloatingBarAlpha = 0.85f
+private const val FloatingIndicatorAlpha = 0.2f
+private val FloatingShadow: Dp = 10.dp
 
 @PreviewLightDark
 @Composable
